@@ -202,6 +202,8 @@ function restart(){
 
     p.innerHTML = 'Score: 0';
 
+    scoreDiv.innerHTML = 'Score: 0';
+
     clouds.style.left = -380 + 'px';
     clouds.classList.add('animacao-clouds');
 
