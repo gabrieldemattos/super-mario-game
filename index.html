@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Super Mario World</title>
+
+</head>
+<body>
+    
+    <div class="cenario">
+
+        <div class="inicio-game">
+            <h3>SUPER MARIO WORLD</h3>
+                          
+            <p>UTILIZE A TECLA ESPAÇO PARA PULAR OS INIMIGOS</p>
+
+            <button class="iniciar-jogo" onclick="startGame()">
+                INICIAR
+            </button>
+        </div>
+
+        <div class="reiniciar-game" hidden="none">
+
+            <h3>GAME OVER</h3>
+
+            <p class="score-div">Score: 0</p>
+            <button class="reiniciar" onclick="restart()">
+                REINICIAR
+            </button>
+        </div>
+
+        <img src="/imgs/plantas.png" class="plantas">
+        <img src="/imgs/cano.png" class="cano">
+        <img src="/imgs/mario.gif" class="mario">
+        <img src="/imgs/clouds.png" class="clouds">
+
+        
+        <span class="score">Score: 0</span>
+    </div>
+    
+    <audio src="sons/pulo.mp3" preload="auto" id="pulo"></audio>
+    <audio src="sons/gameover.mp3" preload="auto" id="somGameover"></audio>
+    <audio src="sons/musica_fundo.mp3" preload="auto" id="musica"></audio>
+    <script src="script.js"></script>
+
+</body>
+</html>

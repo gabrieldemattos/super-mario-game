@@ -1,0 +1,183 @@
+@font-face {
+	font-family:Fontmonospace;
+	src:url(/font/joystix\ monospace.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inicio-game{
+    border: 1px solid black;
+    background: black;
+    width: 40%;
+    height: 300px;
+    margin-top: 50px;
+    position: absolute;
+    margin-left: 400px;
+    text-align: center;
+    font-family: Fontmonospace;
+    color: white;
+}
+
+h3{
+    color: white;
+    font-size: 50px;
+}
+
+.inicio-game p{
+    margin-top: 50px;
+}
+
+.inicio-game button{
+    font-family: Fontmonospace;
+    font-size: 20px;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.iniciar-jogo:hover{
+    color: red;
+}
+
+span{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Fontmonospace;
+    margin: 10px;
+}
+
+.cenario{
+    border-bottom: 15px solid green;
+    background: linear-gradient(rgb(130, 187, 253),white);
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden; /*não mostrar o cano quando ele sair da tela*/
+}
+
+.cano{
+    width: 70px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.plantas{
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+}
+
+.animacao-plantas{
+    animation: plantas-animation 25s linear infinite;
+}
+
+.animacao-cano{
+    animation: cano-animation 3s linear infinite;
+}
+
+.mario{
+     width: 100px;
+     position: absolute;
+     bottom: 0px;
+}
+
+.jump{
+    animation: jump 1s ease-out;
+}
+    
+.clouds{
+    width: 30%;
+    position: absolute;
+}
+
+.animacao-clouds{
+    animation: clouds 20s linear infinite;
+}
+
+.reiniciar-game{
+    border: 1px solid black;
+    background: black;
+    width: 513px;
+    height: 300px;
+    margin-top: 50px;
+    position: absolute;
+    margin-left: 400px;
+    text-align: center;
+    font-family: Fontmonospace;
+    color: white;
+    z-index: 100;
+}
+
+.reiniciar-game h3{
+    margin-top: 50px;
+}
+
+.reiniciar-game p{
+    font-size: 25px;
+    margin-top: 35px;
+}
+
+.reiniciar{
+    font-family: Fontmonospace;
+    font-size: 20px;
+    margin-top: 70px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.reiniciar:hover{
+    color: red;
+}
+
+@keyframes plantas-animation{
+    to{
+        left: -530px;
+    }
+    from{
+        left: 100%;
+    }
+}
+
+@keyframes clouds{
+    to{
+        left: -380px;
+    }
+    from{
+        left: 100%;
+    }
+}
+
+
+@keyframes jump {
+    0%{
+        bottom: 0px;
+    }
+    40%{
+        bottom: 90px;
+    }
+    50%{
+        bottom: 90px;
+    }
+    60%{
+        bottom: 90px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+
+@keyframes cano-animation{
+    from{
+        right: -70px;
+    }
+    to{
+        right: 100%;
+    }
+}
