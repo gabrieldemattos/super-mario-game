@@ -136,6 +136,12 @@ span{
     color: red;
 }
 
+.timer{
+    display: grid;
+    place-items: center;
+    margin-top: -25px;
+}
+
 @keyframes plantas-animation{
     to{
         left: -530px;

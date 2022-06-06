@@ -10,8 +10,11 @@ const gameover = document.getElementById('somGameover');
 const pulo = document.getElementById('pulo');
 const p = document.querySelector('.score');
 const scoreDiv = document.querySelector('.score-div');
+const timer = document.querySelector('.timer');
 var interval, pts = 0;
 let isJumping = false;
+let seconds = 0;  
+let minutes = 0;
 
 //musica de fundo
 musica.addEventListener("ended", function(){ 
@@ -67,6 +70,7 @@ function startGame(){
 
     score();
     randomEnimies();
+    timerGame();
 }
 
 //função que marca a pontuação, checa a cada 3s (tempo da animação do cano no CSS) a condição e soma o ponto caso ela tenha sido satisfeita.
@@ -180,11 +184,33 @@ function check(){
     
             clearInterval(check);
             clearInterval(interval);
+            clearInterval(clock);
         }
     }, 10)
 }
 
 check();
+
+//cronometro do jogo
+function timerGame(){
+
+   clock = setInterval(() => {
+
+
+        ++seconds;
+
+        timer.innerHTML = (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
+
+        if(seconds == 59){
+
+            seconds = 0;
+            minutes++;
+
+        }
+
+    },1000)
+
+}
 
 
 //função que reinicia o jogo quando da game over
@@ -202,6 +228,10 @@ function restart(){
 
     p.innerHTML = 'Score: 0';
 
+    timer.innerHTML = '00:00';
+    seconds = 0;  
+    minutes = 0;
+    
     scoreDiv.innerHTML = 'Score: 0';
 
     clouds.style.left = -380 + 'px';
@@ -223,6 +253,7 @@ function restart(){
     pts = 0;
     check(); 
     score();
+    timerGame();
 }
 
 //quando a tecla espaço subir, a função handleKeyup é chamada.
