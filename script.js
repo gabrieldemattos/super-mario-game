@@ -81,7 +81,7 @@ function score(){
     const canoPosition = cano.offsetLeft;
     
 
-     if(canoPosition > 1){
+     if(canoPosition < 1){
 
         ++pts; 
         p.innerHTML = 'Score: ' +pts;
